@@ -26,14 +26,20 @@ public:
         if(_size == ARRAY_SZ){
             return false;
         }
-
-
+        _data[_b] = c;
+        _b = (_b + 1) % 6;
+        _size++;
         return true;
     }
-	bool dequeue()  { return true;	}
+	bool dequeue()  {
+        if(is_empty()) return false;
+        _f = (_f + 1) % 6;
+        _size--;
+        return true;
+    }
     char front() const    { return _data[_f];}
-	bool is_empty() { return true; }
-    int size() { return 0; }
+	bool is_empty() { if(_size == 0) { return true; } return false;}
+    int size() { return _size; }
 
 private:
 	char _data[ARRAY_SZ]{};
