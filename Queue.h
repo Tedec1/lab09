@@ -37,9 +37,9 @@ public:
         _size--;
         return true;
     }
-    char front() const    { return _data[_f];}
-	bool is_empty() { if(_size == 0) { return true; } return false;}
-    int size() { return _size; }
+    char front() const { return _data[_f];}
+	bool is_empty() const { if(_size == 0) { return true; } return false;}
+    int size() const { return _size; }
 
 private:
 	char _data[ARRAY_SZ]{};
